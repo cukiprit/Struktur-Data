@@ -33,11 +33,9 @@ int main(){
   int umur;
   bool condition = true;
 
-  while(condition){
-    insertNode("Supri", 20);
-    cout << "Data yang telah dimasukkan\n";
-    displayNode();
-  }
+  insertNode("Supri", 20);
+  cout << "Data yang telah dimasukkan\n";
+  displayNode();
 
   return 0;
 }
