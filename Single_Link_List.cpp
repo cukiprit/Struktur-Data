@@ -1,19 +1,18 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 class Node {
   public:
-    string nama;
-    int umur;
+    int val;
   Node *next;
 };
 
 Node *head = NULL;
 
-void insertNode(string new_nama, int new_umur){
-  Node *new_node = (Node*) malloc(sizeof(Node));
-  new_node -> nama = new_nama;
-  new_node -> umur = new_umur;
+void insertNode(int new_val){
+  Node *new_node = (Node*) new float(sizeof(Node));
+  new_node -> val = new_val;
   new_node -> next = head;
   head = new_node;
 }
@@ -22,18 +21,17 @@ void displayNode(){
   Node *n;
   n = head;
   while(n != NULL){
-    cout << "Nama : " << n -> nama << "\n";
-    cout << "umur : "<< n -> umur << "\n\n";
+    cout << n -> val << " ";
     n = n -> next;
   }
 }
 
 int main(){
-  string nama;
-  int umur;
-  bool condition = true;
-
-  insertNode("Supri", 20);
+  insertNode(20);
+  insertNode(12);
+  insertNode(57);
+  insertNode(23);
+  insertNode(18);
   cout << "Data yang telah dimasukkan\n";
   displayNode();
 

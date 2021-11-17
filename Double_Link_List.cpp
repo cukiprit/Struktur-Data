@@ -3,20 +3,16 @@ using namespace std;
 
 class Node {
   public:
-    string kode_MK;
-    string nama_MK;
-    int sks;
+    int val;
   Node *next;
   Node *prev;
 };
 
 Node* head = NULL;
 
-void insertNode(string new_kodeMK, string new_namaMK, int new_sks){
-  Node *new_node = (Node*) malloc(sizeof(Node));
-  new_node -> kode_MK = new_kodeMK;
-  new_node -> nama_MK = new_namaMK;
-  new_node -> sks = new_sks;
+void insertNode(int new_val){
+  Node *new_node = (Node*) new float(sizeof(Node));
+  new_node -> val = new_val;
   new_node -> prev = NULL;
   new_node -> next = head;
 
@@ -30,16 +26,18 @@ void displayNode(){
   Node *n;
   n = head;
   while(n != NULL){
-    cout << n -> kode_MK << "\n";
-    cout << n -> nama_MK << "\n";
-    cout << n -> sks << "\n\n";
+    cout << n -> val << " ";
     n = n -> next;
   }
 }
 
 int main(){
-  insertNode("TI01", "Algoritma", 2);
-  
+  insertNode(2);
+  insertNode(17);
+  insertNode(91);
+  insertNode(35);
+  insertNode(40);
+
   cout << "Data yang telah dimasukkan\n";
   displayNode();
   return 0;
